@@ -18,3 +18,5 @@ public class Solution {
         
     }    
 }
+
+// Time complexity: O(n²)
