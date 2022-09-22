@@ -1,5 +1,8 @@
 package problem.twosum.solucao2;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Solution {
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> hashNums = new HashMap<>();
@@ -20,6 +23,9 @@ public class Solution {
         throw new IllegalArgumentException("Not found");
         
     }
-    
+   
      
 }
+
+
+// O(n)
