@@ -1,27 +1,10 @@
 package problem.twosortedarrays;
 
 class Solution {
-    public static int[] findMedianSortedArrays(int[] nums1, int[] nums2) {
+   
 
-        int[] arr3;
-        
-        arr3 = mergesort(nums1, 0, nums1.length - 1, nums2, 0, nums2.length -1);
-        
-        
-        
-        return arr3;
-        
-    }
-    
-    public static void main(String[] args) {
-		int[] arr1 = {1,3};
-		int[] arr2 = {2};
-    	
-    	System.out.println(findMedianSortedArrays(arr1, arr2));
-	}
-    
-    
-    
+   
+   
     public static int[] merge(int[] nums, int inicio, int fim, int meio) {
     	
     	int nL = meio - inicio + 1;
@@ -73,34 +56,26 @@ class Solution {
     	}
     	
     
-    public static int[] mergesort(int[] nums1, int inicio1, int fim1, int[] nums2, int inicio2, int fim2) {
-    	if(inicio1 >= fim1) {
-    		return null;
+    public static void mergesort(int[] nums, int inicio, int fim) {
+    	if(inicio >= fim) {
+    		return;
     	}
     	
-    	if(inicio2 >= fim2) {
-    		return null;
-    	}
+    
     	
-    	int meio1 = (inicio1 + fim1) / 2;
-    	int meio2 = (inicio2 + fim2) / 2;
+    	int meio = (inicio + fim) / 2;
     	
-    	mergesort(nums1, inicio1, meio1, nums2, inicio2, meio2);
-    	mergesort(nums1, meio1 + 1, fim1, nums2, meio2 + 1, fim2);
+    	
+    	mergesort(nums, inicio, meio);
+    	mergesort(nums, meio + 1, fim);
     	
     	
     	
-    	int total = nums1.length + nums2.length;
-    	int[] numsTotal = new int[total];
-    	int meioTotal = (0 + total) / 2;
-    	
-    	return merge(numsTotal, 0, total-1, meioTotal);//Reponsável por juntar e ordenar.
+ 
+    	merge(nums, 0, fim, meio);//Reponsável por juntar e ordenar.
     	
    
     }
-    
-    
-    
     
     
     
